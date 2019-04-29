@@ -1,0 +1,81 @@
+"
+        /** Primary Care Provider Location Code at 469-H5. Location address code assigned to the primary care provider as identified in the National Provider System (NPS)..
+         * 
+         * @return Primary Care Provider Location Code
+         */
+        public String getPrimaryCareProviderLocationCode() {
+            return getField(""H5"");
+        }
+"
+="
+        /** " & J107 & " at " & I107 & ". " & AO107 & ".
+         * 
+         * @return " & J107 & "
+         */
+        public String get" & firstCap(scrub(J107)) & "() {
+            return getField(""" & RIGHT(I107,2) & """);
+        }
+"
+
+
+************************************************
+** These fields repeat within the same segment *
+************************************************
+G  Segment Name
+I  Field ID          R Repeat Set Id
+J  Field Name        S Repeat Set Name
+AO Purpose
+
+
+Column A     Column G              Column J/P/S
+57           Claim                 (S) Procedure Modifier Code Count
+58                                 (J) Procedure Modifier Code
+                                 
+69           Claim             
+                                   (SIMPLE)Submission Clarification Code
+             
+112          COB/Other Payments    (COUNT)COB/Other Payments Count
+113                                    Other Payer Coverage Type
+                                       (QUALIFIER) Other Payer ID Qualifier
+116                                    Other Payer ID
+                                       Other Payer Date
+                                       (COUNT)Other Payer Amount Paid Count 
+                                                   (QUALIFIER) Other Payer Amount Paid Qualifier
+                                                   Other Payer Amount Paid 
+                                       (COUNT) Other Payer Reject Code Count
+                                                    Other Payer Reject Code 
+                                       (COUNT) Other Payer-Patient Responsibility Amount Count             
+                                                    Other Payer-Patient Responsibility Amount
+                                                                      
+
+120          COB/Other Payments
+126          COB/Other Payments
+130          COB/Other Payments
+166          Pricing                  
+                                   (QUALIFIER) Other Amount Claimed Submitted Qualifier  
+                                   Other Amount Claimed Submitted
+189          Compound                  
+                                   (QUALIFIER)Compound Product ID Qualifier
+                                   Compound Product ID 
+                                   Compound Ingredient Quantity
+                                   Compound Ingredient Drug Cost
+                                   Compound Ingredient Basis of Cost Determination
+                                   
+                                   
+200          Clinical              
+                                   (QUALIFER) Diagnosis Code Qualifier       
+                                   Diagnosis Code
+                                   
+
+
+
+********** Column AV ******************
+="
+        /** " & S58 & " at " & R58 & ".
+         * 
+         * @return " & S58 & "
+         */
+        publRc String get" & firstCap(scrub(S58)) & "() {
+            return getField(""" & RIGHT(R58,2) & """);
+        }
+"

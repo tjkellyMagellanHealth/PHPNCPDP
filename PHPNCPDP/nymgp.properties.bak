@@ -1,0 +1,21 @@
+# Veerendra asked Tim to read files from nymgp
+#Acumen properties
+NCPDP_SIMPLEREPORTB1.checkproperties=yes
+NCPDP_SIMPLEREPORTB1.directory=./SampleData/log
+NCPDP_SIMPLEREPORTB1.log=$1.log
+NCPDP_SIMPLEREPORTB1.errorlog=$1.err
+NCPDP_SIMPLEREPORTB1.delaySeconds=0
+NCPDP_SIMPLEREPORTB1.subscriberclass=ncpdp.SimpleReportB1
+NCPDP_SIMPLEREPORTB1.queueclass=acumen.FileQueues
+NCPDP_SIMPLEREPORTB1.queuenames=SAMPLEDATAQ
+
+
+      ### FTP Queue for DefaultFileQueue ####
+SAMPLEDATAQ.queueclass=acumen.DefaultFileQueue
+SAMPLEDATAQ.filequeuetrace=yes
+SAMPLEDATAQ.directory=./SampleData/nymgp
+SAMPLEDATAQ.queueCapacity=100
+SAMPLEDATAQ.filter=(nymgp_Ncpdp.+)
+SAMPLEDATAQ.queue_archive=
+SAMPLEDATAQ.queue_unread=
+SAMPLEDATAQ.queue_error=
