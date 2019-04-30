@@ -1,0 +1,234 @@
+"
+        /** Primary Care Provider Location Code at 469-H5. Location address code assigned to the primary care provider as identified in the National Provider System (NPS)..
+         * 
+         * @return Primary Care Provider Location Code
+         */
+        public String getPrimaryCareProviderLocationCode() {
+            return getField(""H5"");
+        }
+"
+="
+        /** " & J107 & " at " & I107 & ". " & AO107 & ".
+         * 
+         * @return " & J107 & "
+         */
+        public String get" & firstCap(scrub(J107)) & "() {
+            return getField(""" & RIGHT(I107,2) & """);
+        }
+"
+
+
+************************************************
+** These fields repeat within the same segment *
+************************************************
+G  Segment Name
+I  Field ID          R Repeat Set Id
+J  Field Name        S Repeat Set Name
+AO Purpose
+
+
+Column A     Column G              Column J/P/S
+57           Claim                 (S) Procedure Modifier Code Count
+58                                 (J) Procedure Modifier Code
+                                 
+69           Claim             
+                                   (SIMPLE)Submission Clarification Code
+             
+112          COB/Other Payments    (COUNT)COB/Other Payments Count
+113                                    Other Payer Coverage Type
+                                       (QUALIFIER) Other Payer ID Qualifier
+116                                    Other Payer ID
+                                       Other Payer Date
+                                       (COUNT)Other Payer Amount Paid Count 
+                                                   (QUALIFIER) Other Payer Amount Paid Qualifier
+                                                   Other Payer Amount Paid 
+                                       (COUNT) Other Payer Reject Code Count
+                                                    Other Payer Reject Code 
+                                       (COUNT) Other Payer-Patient Responsibility Amount Count             
+                                                    Other Payer-Patient Responsibility Amount
+                                                                      
+
+120          COB/Other Payments
+126          COB/Other Payments
+130          COB/Other Payments
+166          Pricing                  
+                                   (QUALIFIER) Other Amount Claimed Submitted Qualifier  
+                                   Other Amount Claimed Submitted
+189          Compound                  
+                                   (QUALIFIER)Compound Product ID Qualifier
+                                   Compound Product ID 
+                                   Compound Ingredient Quantity
+                                   Compound Ingredient Drug Cost
+                                   Compound Ingredient Basis of Cost Determination
+                                   
+                                   
+200          Clinical              
+                                   (QUALIFER) Diagnosis Code Qualifier       
+                                   Diagnosis Code
+                                   
+
+
+
+********** Column AV ******************
+="
+        /** " & S58 & " at " & R58 & ".
+         * 
+         * @return " & S58 & "
+         */
+        publRc String get" & firstCap(scrub(S58)) & "() {
+            return getField(""" & RIGHT(R58,2) & """);
+        }
+"
+
+
+
+1.   Declare class           public static class RejectCodes extends Fields{}             public static class PatientResponsibilityAmount extends Fields{
+                                                                                             	/**                                                           
+                                                                                         		 * @return the qualifier                                        
+                                                                                         		 */                                                             
+                                                                                         		public String getQualifier() {                                  
+                                                                                         			return getValue("NP");                                        
+                                                                                         		}                                                               
+                                                                                         		/**                                                             
+                                                                                         		 * @return the amount                                           
+                                                                                         		 */                                                             
+                                                                                         		public String getAmount() {                                     
+                                                                                         			return getValue("NQ");                                        
+                                                                                         		}	                                                              
+                                                                                          }                                                              
+
+
+
+
+
+
+
+
+
+
+
+                                              
+     
+2.   Declare member            RejectCodes rejectCodes = new RejectCodes();  
+
+3.   Modify Constructor   	public Claim(String claim) {
+                           			addData(claim);           
+                          	}                           
+     
+3.   override add(Field)#1  public boolean add(Field f) {                       		/* (non-Javadoc)                                    
+                            	boolean changed = true;                           		 * @see ncpdp.Fields#add(ncpdp.Field)               
+                            	if("5E".equals(f.getCode())){                     		 * SE ER                                            
+                             	int capacity = 10;                                		 */                                                 
+                             	try {                                             		@Override                                           
+                             		capacity = Integer.parseInt(f.getValue());      		public boolean add(Field f) {                       
+                             	} catch(Exception ignore) {}                      			boolean changed = true;                           
+                             	rejectCodes.ensureCapacity(capacity);             			if("SE".equals(f.getCode())) {                    
+                             	changed = super.add(f);                           				int capacity = 10;                              
+                             }                                                  				try {                                           
+4.   override add(Field)#2   }  else if("6E".equals(f.getCode())){              					capacity = Integer.parseInt(f.getValue());    
+     				                   rejectCodes.add(f);                              				}catch(Exception ignore) {}                     
+     				                }                                                   				procedureModifierCodes.ensureCapacity(capacity);
+     				                                                                    				changed = super.add(f);                         
+     				                                                                    			} else if("ER".equals(f.getCode())) {             
+     				                                                                    				procedureModifierCodes.add(f);                  
+     				                                                                    			} else {                                          
+     				                                                                    				changed = super.add(f);                         
+     				                                                                    			}                                                 
+     				                                                                    			                                                  
+     				                                                                    			return changed;                                   
+     				                                                                    		}                                                   
+     				                    
+     				                    
+5.   getter                  public Fields getRejects() {				                
+                                 return rejectCodes;      
+                             }    
+     
+                                           
+1.  Declare class           public static class Detail extends Fields{}
+
+2.  Move methods.           			/** Other Payer Coverage Type at 338-5C. Code identifying the type of ‘Other Payer ID’ (340-7C).. 
+    Use Outline             			 *                                                                                                
+                            			 * @return Other Payer Coverage Type                                                              
+                            			 */                                                                                               
+                            			public String getOtherPayerCoverageType() {                                                       
+                            			    return getValue("5C");                                                                        
+                            			}                                                                                                 
+                                                                                                        
+                            			/** (QUALIFIER) Other Payer ID Qualifier at 339-6C. Code qualifying the ‘Other Payer ID’ (340-7C).
+                            			 *                                                                                                
+                            			 * @return Other Payer ID Qualifier                                                               
+                            			 */                                                                                               
+                            			public String getOtherPayerIDQualifier() {                                                        
+                            			    return getValue("6C");                                                                        
+                            			}                   
+3. add(Field)                 		public boolean add(Field f) {                   
+                              			boolean changed = true;                       
+                              			if ("4C".equals(f.getCode())) {               
+                              				int capacity = 10;                          
+                              				try {                                       
+                              					capacity = Integer.parseInt(f.getValue());
+                              				} catch(Exception ignore) {                 
+                              					ignore.printStackTrace();                 
+                              				}                                           
+                              				details.ensureCapacity(capacity);           
+                              				changed = super.add(f);                     
+                              			}else if("5C".equals(f.getCode())) {          
+                              				Detail detail = new Detail();               
+                              				details.add(detail);                        
+                              				changed = detail.add(f);                    
+                              			}else if(details.isEmpty() == false) {        
+                              				Detail last = details.lastElement();        
+                              				changed = last.add(f);                      
+                              			}else {                                       
+                              				changed = super.add(f);                     
+                              			}                                             
+                              			return changed;                               
+                              		}                                               
+
+
+
+3. add(Field) with counter   		/* (non-Javadoc)                                                         
+                             		 * @see ncpdp.Fields#add(ncpdp.Field)                                    
+                             		 * VE WE DO   Diagnosis Codes                                            
+                             		 * XE ZE H1 H2 H3 H4                                                     
+                             		 */                                                                      
+                             		@Override                                                                
+                             		public boolean add(Field f) {                                            
+                             			boolean changed = true;                                                
+                             			if("XE".equals(f.getCode())) {                                   
+                             				Measurement measurement = new Measurement();                         
+                            					measurements.add(measurement);                                       		
+                             				changed = measurement.add(f);                                        
+                             			}else if(",ZE,H1,H2,H3,H4,".contains("," + f.getCode() +",")) {        
+                             				Measurement last = measurements.lastElement();                       
+                             				changed = last.add(f);                                               
+                             			}else{                                                                 
+                             				changed = super.add(f);                                              
+                             			}                                                                      
+                             			return changed;                                                        
+                             		}                                                                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. Continue on step 5 from above  
+                      			                         

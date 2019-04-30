@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: . Histogram837_lib/mediq_00_50_10.jar Histogram837_lib/org.hamcrest.core_1.1.0.v20090501071000.jar Histogram837_lib/ojdbc14.jar Histogram837_lib/fitnesse.jar Histogram837_lib/gnu-regexp-1.1.1.jar Histogram837_lib/junit.jar Histogram837_lib/sqljdbc4.jar Histogram837_lib/mail.jar Histogram837_lib/runtime12.jar Histogram837_lib/activation.jar Histogram837_lib/log4j-1.2.14.jar
+Main-Class: hipaa.Histogram837.HistogramX12
+

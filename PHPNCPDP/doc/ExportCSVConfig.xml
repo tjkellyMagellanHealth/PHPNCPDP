@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ECS2CSVUserConfig [
+<!ELEMENT ECS2CSVUserConfig (ColumnOptions ,IDOptions ,RowOptions ,HeaderOptions ,TrailerOptions ) >
+  <!ATTLIST ECS2CSVUserConfig
+  	DocumentType CDATA #REQUIRED
+  	Version CDATA #REQUIRED
+  >
+  <!ELEMENT ColumnOptions (Column*)>
+  <!ELEMENT Column (MissingValue*)>
+  <!ATTLIST Column
+  	Name CDATA #REQUIRED
+  	DisplayName CDATA #IMPLIED
+  >
+  <!ELEMENT MissingValue (#PCDATA)>
+  <!ATTLIST MissingValue
+  	ApplyToNode CDATA #REQUIRED
+  	Value CDATA #REQUIRED
+  >
+  <!ELEMENT IDOptions (IDOption*)>
+  <!ELEMENT IDOption (DefaultFormat)>
+  <!ATTLIST IDOption
+  	NodeType CDATA #REQUIRED
+  >
+  <!ELEMENT DefaultFormat (Arg*)>
+  <!ATTLIST DefaultFormat
+  	FormatString CDATA #REQUIRED
+  >
+  <!ELEMENT Arg (#PCDATA)>
+  <!ATTLIST Arg
+  	DataSource CDATA #REQUIRED
+  >
+  <!ELEMENT RowOptions (Rows, Option*)>
+  <!ELEMENT Rows (Row*)>
+  <!ELEMENT Row (#PCDATA)>
+  <!ATTLIST Row
+  	SupportEndRow (YES|NO) "YES"
+  	EndRow (YES | NO) "NO"
+  	NodeType CDATA #REQUIRED
+  >
+  <!ELEMENT Option (#PCDATA)>
+  <!ATTLIST Option
+  	Name CDATA #REQUIRED
+  	Value CDATA #REQUIRED
+  >
+  <!ELEMENT HeaderOptions (FormattedText*)>
+  <!ELEMENT FormattedText (Arg*)>
+  <!ATTLIST FormattedText
+  	FormatString CDATA #REQUIRED
+  >
+  <!ELEMENT TrailerOptions (FormattedText*)>
+  ]>
+
+<ECS2CSVUserConfig DocumentType="PositionalFlatFile" Version="1.0">
+	<ColumnOptions>
+		<Column Name="#" Selected="YES"/>
+		<Column Name="GroupRecord ID" Selected="YES"/>
+		<Column Name="GroupRecord Name" Selected="YES"/>
+		<Column Name="Record ID" Selected="YES"/>
+		<Column Name="Record Name" Selected="YES"/>
+		<Column Name="Composite ID" Selected="YES"/>
+		<Column Name="Composite Name" Selected="YES"/>
+		<Column Name="Composite Position" Selected="YES"/>
+		<Column Name="Min use" Selected="YES"/>
+		<Column Name="Max use" Selected="YES"/>
+		<Column Name="Field Position" Selected="YES"/>
+		<Column Name="Field ID" Selected="YES"/>
+		<Column Name="Field Name" Selected="YES"/>
+		<Column Name="Standard Option" Selected="YES"/>
+		<Column Name="User Option" Selected="YES"/>
+		<Column Name="Excluded" Selected="YES"/>
+		<Column Name="Type" Selected="YES"/>
+		<Column Name="Format" Selected="YES"/>
+		<Column Name="Size" Selected="YES"/>
+		<Column Name="Min Length" Selected="YES"/>
+		<Column Name="Max Length" Selected="YES"/>
+		<Column Name="Codelist" Selected="YES"/>
+		<Column Name="Justification" Selected="YES"/>
+		<Column Name="Names" Selected="YES"/>
+		<Column Name="Purpose" Selected="YES"/>
+		<Column Name="Padding" Selected="YES"/>
+		<Column Name="Occurs" Selected="YES"/>
+		<Column Name="UPath" Selected="NO"/>
+		<Column Name="ID" Selected="NO"/>
+		<Column Name="Occurs Depending On" Selected="NO"/>
+		<Column Name="Selected Node" Selected="NO"/>
+		<Column Name="Application Field Name" Selected="NO"/>
+		<Column Name="Application Record" Selected="NO"/>
+		<Column Name="Application Example" Selected="NO"/>
+		<Column Name="Application Mode" Selected="NO"/>
+		<Column Name="Application Control" Selected="NO"/>
+		<Column Name="Application Label" Selected="NO"/>
+		<Column Name="Application Format" Selected="NO"/>
+		<Column Name="Application Notes" Selected="NO"/>
+		<Column Name="User Note 1" Selected="NO"/>
+		<Column Name="User Note 2" Selected="NO"/>
+		<Column Name="User Note 3" Selected="NO"/>
+		<Column Name="User Note 4" Selected="NO"/>
+		<Column Name="User Note 5" Selected="NO"/>
+		<Column Name="User Note 6" Selected="NO"/>
+		<Column Name="User Note 7" Selected="NO"/>
+		<Column Name="User Note 8" Selected="NO"/>
+		<Column Name="User Note 9" Selected="NO"/>
+		<Column Name="User Note 10" Selected="NO"/>
+		<Column Name="User Note 11" Selected="NO"/>
+		<Column Name="User Note 12" Selected="NO"/>
+		<Column Name="User Note 13" Selected="NO"/>
+		<Column Name="User Note 14" Selected="NO"/>
+		<Column Name="User Note 15" Selected="NO"/>
+		<Column Name="User Note 16" Selected="NO"/>
+		<Column Name="User Note 17" Selected="NO"/>
+		<Column Name="User Note 18" Selected="NO"/>
+		<Column Name="User Note 19" Selected="NO"/>
+		<Column Name="User Note 20" Selected="NO"/>
+	</ColumnOptions>
+	<IDOptions>
+		<IDOption NodeType="GroupRecord">
+			<DefaultFormat FormatString="%s">
+				<Arg DataSource="ID"/>
+			</DefaultFormat>
+		</IDOption>
+		<IDOption NodeType="Record">
+			<DefaultFormat FormatString="%s">
+				<Arg DataSource="ID"/>
+			</DefaultFormat>
+		</IDOption>
+		<IDOption NodeType="Composite">
+			<DefaultFormat FormatString="%s">
+				<Arg DataSource="ID"/>
+			</DefaultFormat>
+		</IDOption>
+		<IDOption NodeType="Field">
+			<DefaultFormat FormatString="%s">
+				<Arg DataSource="ID"/>
+			</DefaultFormat>
+		</IDOption>
+	</IDOptions>
+	<RowOptions>
+		<Rows>
+			<Row NodeType="GroupRecord" EndRow="YES"/>
+			<Row NodeType="Record" EndRow="YES"/>
+			<Row NodeType="Composite" EndRow="YES"/>
+			<Row NodeType="Union" EndRow="YES"/>
+			<Row NodeType="Field" SupportEndRow="NO"/>
+		</Rows>
+		<Option Name="SuppressNotUsedNodes" Value="NO"/>
+		<Option Name="SuppressExcludedNodes" Value="NO"/>
+		<Option Name="SuppressExcludedCodes" Value="YES"/>
+	</RowOptions>
+	<HeaderOptions>
+		<FormattedText FormatString=""/>
+		<FormattedText FormatString=""/>
+		<FormattedText FormatString=""/>
+	</HeaderOptions>
+	<TrailerOptions>
+		<FormattedText FormatString=""/>
+		<FormattedText FormatString=""/>
+		<FormattedText FormatString=""/>
+	</TrailerOptions>
+</ECS2CSVUserConfig>

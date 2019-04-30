@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<jardesc>
+    <jar path="J:/tkelly/PHPNCPDP/jar/Histogram837.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/PHPNCPDP/phpncpdp.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" manifestLocation="/PHPNCPDP/META-INF/MANIFEST.MF" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="true">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <javaElement handleIdentifier="=PHPNCPDP/src&lt;hipaa.Histogram837"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{TeeStream.java"/>
+        <folder path="/PHPNCPDP/META-INF"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{QueueEvents.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{ControlFileQueue.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;magellan.ftpQueue"/>
+        <file path="/PHPNCPDP/.project"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;kelly.lang"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{StandardCommandLine.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;mhsutil"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;mhsutil.junit"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{Acumen.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;magellan.sql"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{FileQueues.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{InterruptedException.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{LocalGlobalProperties.java"/>
+        <file path="/PHPNCPDP/.classpath"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{MissingConfigurationException.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{DefaultFileSubscriber.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{FileSubscriber.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;magellan.util"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{Courier.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{ResultFile.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{DefaultFileQueue.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{FileQueue.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{AcumenPropertiesException.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{RecoupVerifier.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{CleanerReader.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{FindFileQueue.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{PrettySegments.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;magellan.math"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{ReadOnlyFileQueue.java"/>
+        <javaElement handleIdentifier="=PHPNCPDP/src&lt;hipaa"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;globalX12Java.isa_gs_4010"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{CopyFile.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;jargs.gnu"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;globalX12Java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{CompareStream.java"/>
+        <javaElement handleIdentifier="=JavaLib/&lt;acumen{FileFactory.java"/>
+    </selectedElements>
+</jardesc>
